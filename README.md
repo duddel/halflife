@@ -1,3 +1,7 @@
+> Making it buildable on modern systems, with minimal changes to the original code base. See [/docs](/docs) for more information.
+
+* * *
+
 Half Life 1 SDK LICENSE
 ======================
 

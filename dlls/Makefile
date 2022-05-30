@@ -171,10 +171,10 @@ $(DLLNAME)_$(ARCH).$(SHLIBEXT) : neat $(OBJ)
 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) $(LDFLAGS) -o $@ $(OBJ)
 
 neat:
-	-mkdir $(DLL_OBJDIR)
-	-mkdir $(WPN_SHARED_OBJDIR)
-	-mkdir $(GAME_SHARED_OBJDIR)
-	-mkdir $(PM_SHARED_OBJDIR)
+	-mkdir -p $(DLL_OBJDIR)
+	-mkdir -p $(WPN_SHARED_OBJDIR)
+	-mkdir -p $(GAME_SHARED_OBJDIR)
+	-mkdir -p $(PM_SHARED_OBJDIR)
 clean:
 	-rm -f $(OBJ)
 	-rm -f $(DLLNAME)_$(ARCH).$(SHLIBEXT)

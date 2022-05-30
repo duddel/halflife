@@ -1,0 +1,31 @@
+name: build
+on: push
+
+jobs:
+  build_windows:
+    strategy:
+      matrix:
+        build_config: ["Debug", "Release"]
+    name: Build Windows
+    runs-on: windows-2022
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup msbuild
+        uses: microsoft/setup-msbuild@v1.1
+      - name: Build
+        run: msbuild projects\vs2022_noutils\projects.sln -property:Configuration=${{ matrix.build_config }}
+
+  build_linux:
+    strategy:
+      matrix:
+        build_config: ["debug", "release"]
+    name: Build Linux
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build Docker image
+        run: docker build -t hlbuild .
+      - name: Build
+        run: docker run --rm -v $(pwd):/code -w /code/linux hlbuild make CFG=${{ matrix.build_config }}

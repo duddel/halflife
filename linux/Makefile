@@ -29,9 +29,9 @@ ARCH=i386
 ELF-GC-DYNSTR=./elf-gc-dynstr
 
 ifeq ($(OS),Linux)
-	CC="/valve/bin/gcc-4.6 -m32"
-	CPLUS="/valve/bin/g++-4.6 -m32"
-	CPP_LIB:=-L$(shell /valve/bin/g++-4.6 -m32 -print-file-name=libstdc++.so | xargs dirname) -lstdc++ -ldl -lpthread
+	CC="gcc-4.9 -m32"
+	CPLUS="g++-4.9 -m32"
+	CPP_LIB:=-L$(shell g++-4.9 -m32 -print-file-name=libstdc++.so | xargs dirname) -lstdc++ -ldl -lpthread
 endif
 
 ifeq ($(OS),Darwin)
@@ -142,7 +142,7 @@ TARGETS+= \
 	ricochet_cdll \
 
 build_dir:
-	-mkdir $(BUILD_DIR);
+	-mkdir -p $(BUILD_DIR);
 	cd $(BUILD_DIR)
 
 targets: $(TARGETS)
