@@ -14,7 +14,7 @@ jobs:
       - name: Setup msbuild
         uses: microsoft/setup-msbuild@v1.1
       - name: Build
-        run: msbuild projects\vs2022_noutils\projects.sln -property:Configuration=${{ matrix.build_config }}
+        run: msbuild projects\vs2022_hlonly\projects.sln -property:Configuration=${{ matrix.build_config }}
 
   build_linux:
     strategy:

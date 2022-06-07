@@ -1,4 +1,4 @@
-> Making it buildable on modern systems, with minimal changes to the original code base. See [/docs](/docs) for more information.
+> This branch contains hl only (no dmc, ricochet, utils). Buildable on modern systems, with minimal changes to the original code base. See [/docs](/docs) for more information.
 
 * * *
 

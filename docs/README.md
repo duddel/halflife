@@ -10,8 +10,8 @@ Overview of adjustments done to the original source code.
 
 The code compiles with
 
--   VS 2010, original solutions: [/projects/vs2010](../projects/vs2010)
--   VS 2022, converted solution `projects.sln` (no utils): [/projects/vs2022_noutils](../projects/vs2022_noutils)
+-   VS 2010 `projects.sln` (hl only): [/projects/vs2010_hlonly](../projects/vs2010_hlonly)
+-   VS 2022 `projects.sln` (hl only): [/projects/vs2022_hlonly](../projects/vs2022_hlonly)
 -   gcc 4.9 on Ubuntu 16.04: [/Dockerfile](../Dockerfile)
 
 ## Windows
@@ -27,9 +27,7 @@ There are solutions for VS 2010 and VS 2022. Follow the configuration steps belo
 -   Project **hldll**
     -   Properties -> General -> Output Directory -> Set `<path-to-hl>\valve\dlls`
 
-This can also be done analog for `dmc` and `ricochet`.
-
-The client dll projects (`_cdll`) are configured to depend on the corresponding server dll projects (VS 2022 only). This way, starting a debug session of a client project, cause the server project to rebuild automatically if needed.
+The client dll project (`hl_cdll`) is configured to depend on the corresponding server dll project (VS 2022 only). This way, starting a debug session of the client project, cause the server project to rebuild automatically if needed.
 
 ## Linux
 
