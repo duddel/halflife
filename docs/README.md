@@ -4,7 +4,7 @@ This project is a Half-Life mod template and playground based on the official Ha
 
 ### Project Setup
 
-Open [mod_filecopy.bat](../mod_filecopy.bat) and edit the `mod_dir` path to point to your Half-Life installation and mod subdirectory. The default mod name is `hllab`.
+Open the files [mod_filecopy.bat](../mod_filecopy.bat) and [mod_hllab_copyassets.bat](../mod_hllab_copyassets.bat) and edit the `mod_dir` path to point to your Half-Life installation and mod subdirectory. The default mod name is `hllab`.
 
 Open the solution [projects/vs2019/projects.sln](../projects/vs2019/projects.sln) in Visual Studio 2019 (or later). The project **hldll** is configured as the Startup Project and depends on **hl_cdll**, so they are always built together. The `dmc` and `ricochet` projects are disabled and not built in this solution.
 
